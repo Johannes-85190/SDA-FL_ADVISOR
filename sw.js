@@ -1,4 +1,4 @@
-const CACHE_NAME = "sda-costindex-v1";
+const CACHE_NAME = "sda-costindex-v8";
 
 const urlsToCache = [
   "/",
