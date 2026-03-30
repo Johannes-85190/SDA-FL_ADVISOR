@@ -183,6 +183,63 @@ button {
 .container {
   padding: 16px;
 }
+  /* ===== FIX GLOBAL ===== */
+* {
+  box-sizing: border-box;
+}
+
+/* ===== INPUTS / SELECT UNIFORMES ===== */
+input, select {
+  width: 100%;
+  height: 38px;              /* 🔥 hauteur uniforme */
+  padding: 6px 10px;
+  border-radius: 10px;       /* 🔥 arrondi */
+  border: 1px solid #ccc;
+  margin: 0;
+}
+
+/* ===== LIGNE FL (harmonisation hauteur) ===== */
+.ligne-compacte input,
+.ligne-compacte select {
+  height: 38px;              /* 🔥 même hauteur partout */
+}
+
+/* ===== ALIGNEMENT PRIX / COUT ===== */
+.row {
+  display: flex;
+  gap: 14px;                 /* 🔥 espace entre prix et coût */
+}
+
+/* ===== STRUCTURE DES CHAMPS ===== */
+.field {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== ESPACE ENTRE MODE ET PRIX ===== */
+.card > .row {
+  margin-top: 8px;
+}
+
+/* ===== ESPACE ENTRE LABEL ET INPUT ===== */
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+/* ===== ALIGNEMENT PARFAIT DROITE ===== */
+.field input {
+  width: 100%;
+}
+
+/* ===== CARDS ===== */
+.card {
+  padding: 16px;
+  border-radius: 16px;
+}
 </style>
 </style>
 </head>
