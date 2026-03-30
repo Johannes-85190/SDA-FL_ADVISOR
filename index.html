@@ -133,16 +133,14 @@ function ajouterLigne(){
   let d=document.createElement("div");
   d.className="card";
 
-  d.innerHTML=`
-    <div class="row">
-      <select class="nom">${genererOptionsFL()}</select>
-      <input class="tdv" type="number" placeholder="TDV (min)">
-    </div>
-    <div class="row">
-      <input class="conso" type="number" placeholder="CONSO (${getUniteConso()})">
-      <button class="supprimer" onclick="this.parentElement.parentElement.remove()">🗑</button>
-    </div>
-  `;
+  d.innerHTML = `
+  <div class="row ligne-compacte">
+    <select class="nom">${genererOptionsFL()}</select>
+    <input class="tdv" type="number" placeholder="TDV">
+    <input class="conso" type="number" placeholder="CONSO (${getUniteConso()})">
+    <button class="supprimer" onclick="this.parentElement.remove()">🗑</button>
+  </div>
+`;
 
   container.appendChild(d);
 }
