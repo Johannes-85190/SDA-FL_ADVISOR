@@ -48,13 +48,15 @@ h2 {
 /* ===== ROW ===== */
 .row {
   display: flex;
-  gap: 16px; 
+  gap: 12px; 
 }
 
 /* ===== ALIGNEMENT PRIX / COUT ===== */
 .field {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .field label {
@@ -67,10 +69,10 @@ h2 {
 }
 
 /* ===== INPUT GLOBAL ===== */
-input,select {
-  width:100%;
-  border-radius:8px;
-  border:1px solid #ddd;
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin: 0;
 }
 
 /* ===== LIGNE COMPACTE ===== */
