@@ -307,7 +307,7 @@ function ajouterLigne(){
   d.innerHTML = `
   <div class="row ligne-compacte">
     <select class="nom">${genererOptionsFL()}</select>
-    <input class="tdv" type="number" placeholder="TDV">
+    <input class="tdv" type="number" placeholder="TDV (min)">
     <input class="conso" type="number" placeholder="CONSO (${getUniteConso()})">
     <button class="supprimer" onclick="this.parentElement.remove()">🗑</button>
   </div>
