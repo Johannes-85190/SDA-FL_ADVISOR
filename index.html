@@ -78,8 +78,8 @@ input, select {
 /* ===== LIGNE COMPACTE ===== */
 .ligne-compacte {
   display: flex;
-  gap: 8px;
-  align-items: center; /* 🔥 on revient à center */
+  gap: 10px;
+  align-items: center; /* ✅ alignement correct */
 }
 .ligne-compacte select { flex:0.9; }
 .ligne-compacte .tdv { flex:0.8; }
@@ -114,16 +114,19 @@ button {
 .supprimer {
   flex: 0 0 44px;
   height: 38px;
+
+  background: #e74c3c;      /* 🔥 rouge */
+  color: white;
+
+  border: none;
   border-radius: 10px;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   padding: 0;
-  
-  position: relative;
-  top: -1px; /* 🔥 micro ajustement parfait */
+  margin: 0;
 }
 
 /* ===== RESULT ===== */
