@@ -3,40 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDA-COSTINDEX</title>
 
-<title>SDA-FL ADVISOR</title>
-
-<!-- PWA iOS -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="SDA-COSTINDEX">
-
-<link rel="apple-touch-icon" href="icon-192.png">
-
-<!-- Android / général -->
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#3498db">
+<meta name="theme-color" content="#2ecc71">
 
 <style>
-/* ton CSS inchangé */
-</style>
-</head>
-<style>
-<style>
-
-/* ===== GLOBAL FIX ===== */
-* {
-  box-sizing: border-box;
-}
-
 body { font-family: Arial; background:#f2f4f7; margin:0; }
 .container { padding:15px; max-width:500px; margin:auto; }
 
-h2 {
-  text-align: center;
-  margin-top: 8px;   /* 🔥 réduit l’espace au-dessus */
-  margin-bottom: 12px;
-}
+h2 { text-align:center; }
+
 .card {
   background:white;
   border-radius:12px;
@@ -45,61 +22,17 @@ h2 {
   box-shadow:0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* ===== ROW ===== */
-.row {
-  display: flex;
-  gap: 12px; 
-}
-
-/* ===== ALIGNEMENT PRIX / COUT ===== */
-.field {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.field label {
-  font-size:13px;
-}
-
-.field input {
+input,select {
   width:100%;
-  height:40px;
+  padding:10px;
+  margin:5px 0;
+  border-radius:8px;
+  border:1px solid #ddd;
 }
 
-/* ===== INPUT GLOBAL ===== */
-input, select {
-  width: 100%;
-  padding: 8px;
-  margin: 0;
-}
+.row { display:flex; gap:8px; }
+.row input,.row select { flex:1; }
 
-/* ===== LIGNE COMPACTE ===== */
-.ligne-compacte {
-  display: flex;
-  gap: 10px;
-  align-items: center; /* ✅ alignement correct */
-}
-.ligne-compacte select { flex:0.9; }
-.ligne-compacte .tdv { flex:0.8; }
-.ligne-compacte .conso { flex:1.2; }
-
-.ligne-compacte .supprimer {
-  flex:0 0 40px;
-  padding:6px;
-  height:40px;
-}
-
-.ligne-compacte input,
-.ligne-compacte select {
-  height:40px;
-  padding:4px 8px;
-  font-size:13px;
-  margin:0;
-}
-
-/* ===== BUTTON ===== */
 button {
   width:100%;
   padding:12px;
@@ -111,25 +44,8 @@ button {
 
 .add { background:#3498db; color:white; }
 .calc { background:#2ecc71; color:white; }
-.supprimer {
-  flex: 0 0 44px;
-  height: 38px;
+.supprimer { background:#e74c3c; color:white; width:50px; }
 
-  background: #e74c3c;      /* 🔥 rouge */
-  color: white;
-
-  border: none;
-  border-radius: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0;
-  margin: 0;
-}
-
-/* ===== RESULT ===== */
 .result-item {
   padding:10px;
   border-radius:10px;
@@ -146,123 +62,13 @@ button {
   font-size:13px;
   color:#555;
 }
-.field input {
-  height: 34px; /* réduit la hauteur */
-}
-
-.field {
-  min-width: 0; /* évite que les champs se touchent */
-}
-.container {
-  margin-top: 10px;
-}  
-  /* ===== ESPACEMENT GLOBAL PRO ===== */
-
-/* espace entre les sections (cards) */
-.card {
-  margin-bottom: 16px;
-}
-
-/* espace entre Prix/Coût et les lignes FL */
-#container {
-  margin-top: 12px;
-}
-
-/* espace entre les lignes FL */
-#container .card {
-  margin-bottom: 12px;
-}
-
-/* espace entre les labels et les champs */
-label {
-  display: block;
-  margin-bottom: 4px;
-}
-
-/* espace entre groupes (AVION / MODE / etc) */
-.card > label {
-  margin-top: 8px;
-}
-
-/* espace boutons */
-button {
-  margin-top: 12px;
-}
-
-/* espace entre boutons */
-.add {
-  margin-top: 16px;
-}
-
-/* centrage visuel général */
-.container {
-  padding: 16px;
-}
-  /* ===== FIX GLOBAL ===== */
-* {
-  box-sizing: border-box;
-}
-
-/* ===== INPUTS / SELECT UNIFORMES ===== */
-input, select {
-  width: 100%;
-  height: 38px;              /* 🔥 hauteur uniforme */
-  padding: 6px 10px;
-  border-radius: 10px;       /* 🔥 arrondi */
-  border: 1px solid #ccc;
-  margin: 0;
-}
-
-/* ===== LIGNE FL (harmonisation hauteur) ===== */
-.ligne-compacte input,
-.ligne-compacte select {
-  height: 38px;              /* 🔥 même hauteur partout */
-}
-
-/* ===== ALIGNEMENT PRIX / COUT ===== */
-.row {
-  display: flex;
-  gap: 14px;                 /* 🔥 espace entre prix et coût */
-}
-
-/* ===== STRUCTURE DES CHAMPS ===== */
-.field {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ===== ESPACE ENTRE MODE ET PRIX ===== */
-.card > .row {
-  margin-top: 8px;
-}
-
-/* ===== ESPACE ENTRE LABEL ET INPUT ===== */
-label {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 14px;
-}
-
-/* ===== ALIGNEMENT PARFAIT DROITE ===== */
-.field input {
-  width: 100%;
-}
-
-/* ===== CARDS ===== */
-.card {
-  padding: 16px;
-  border-radius: 16px;
-}
-</style>
 </style>
 </head>
 
 <body>
 <div class="container">
 
-<h2>✈︎ SDA-FL ADVISOR ✈︎</h2>
+<h2>✈️ SDA-COSTINDEX</h2>
 
 <div class="card">
 <label>AVION</label>
@@ -277,16 +83,11 @@ label {
   <option value="GIE">GIE </option>
 </select>
 
-<div class="row">
-  <div class="field">
-    <label>Prix carburant (€/L)</label>
-    <input id="prix" type="number" step="0.01" value="1">
-  </div>
-  
-  <div class="field">
-    <label>Coût (€/minute)</label>
-    <input id="minute" type="number">
-  </div>
+<label>Prix carburant (€/L)</label>
+<input id="prix" type="number" step="0.01" value="1">
+
+<label>Coût(€/minute)</label>
+<input id="minute" type="number">
 </div>
 
 <div id="container"></div>
@@ -319,12 +120,12 @@ function ajouterLigne(){
   let d=document.createElement("div");
   d.className="card";
 
-  d.innerHTML = `
+ d.innerHTML=`
   <div class="row ligne-compacte">
     <select class="nom">${genererOptionsFL()}</select>
-    <input class="tdv" type="number" placeholder="TDV (min)">
+    <input class="tdv" type="number" placeholder="TDV">
     <input class="conso" type="number" placeholder="CONSO (${getUniteConso()})">
-    <button class="supprimer" onclick="this.parentElement.remove()">🗑</button>
+    <button class="supprimer" onclick="this.parentElement.parentElement.remove()">🗑</button>
   </div>
 `;
 
@@ -333,7 +134,7 @@ function ajouterLigne(){
 
 // MAJ avion
 function majCoutMinute(){
-  minute.value = avion.value==="E55P" ? 48 : 35;
+  minute.value = avion.value==="E55P" ? 55 : 35;
 
   document.querySelectorAll(".conso").forEach(i=>{
     i.placeholder = `CONSO (${getUniteConso()})`;
@@ -361,8 +162,8 @@ function calculer(){
 
     // conversion litres
     let consoL = avion.value==="E55P"
-      ? conso/0.79
-      : (conso*0.453592)/0.79;
+      ? conso/0.8
+      : (conso*0.453592)/0.8;
 
     let coutTemps = tdv * minute;
     let coutCarb = consoL * prix;
@@ -422,12 +223,16 @@ ajouterLigne();
 majCoutMinute();
 
 </script>
+
 <script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js")
-    .then(() => console.log("SW OK"))
-    .catch(err => console.log("SW erreur", err));
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
 }
+</script>
+
+</body>
+</html>
+
 </script>
 </body>
 </html>
